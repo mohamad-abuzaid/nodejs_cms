@@ -1,0 +1,54 @@
+<form ng-controller="UsersController" ng-submit="UpdatePassword()">
+    <!--{{UsersData}}-->
+    <div class="tab-content">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>الاسم</th>
+                        <th>البريد الالكتروني</th>
+                        <th>رقم التليفون</th>
+                        <th class="col-xs-2 col-sm-1 col-md-1">التحكم</th>
+                    </tr>
+                    <tr ng-repeat="User in UsersData">
+                        <td>{{User.user_name}}</td>
+                        <td>{{User.user_email}}</td>
+                        <td>{{User.user_phone}}</td>
+                        <td class="col-xs-2 col-sm-1 col-md-1">
+                            <span ng-click="RemoveUser(User.user_id)" class="btn btn-sm btn-danger fa fa-close" data-toggle="tooltip" data-placement="top" title="حذف"></span>
+                            <span ng-click="EditPassword(User.user_id)" class="btn btn-sm btn-primary fa fa-user-secret" data-toggle="modal" data-target="#editdata" title="تعديل كلمة المرور"></span>
+                            <span ng-if="User.doctor_id != null" class="btn btn-sm btn-info fa fa-file" data-toggle="tooltip" data-placement="top" title="عرض البيانات"></span>
+                            <span ng-if="User.patient_id != null" class="btn btn-sm btn-info fa fa-file" data-toggle="tooltip" data-placement="top" title="عرض البيانات"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="editdata" tabindex="-1" role="dialog" aria-labelledby="editdata">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">تغير كلمة المرور</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="pull-right" >كلمة المرور الجديدة</label>
+                        <br>
+                        <input name="user_password" ng-model="EditData.user_password" value="" type="text" required="" class="form-control text-left" >
+                    </div>
+                    <input name="user_id" ng-model="EditData.user_id" type="hidden">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

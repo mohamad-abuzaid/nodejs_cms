@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<section class="content-header">
+    <h1>
+        {{'members'| translate}}
+        <small>{{'view member'| translate}}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> {{'members'| translate}}</a></li>
+        <li class="active">{{'here'| translate}}</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">  
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <button type="submit" ng-click="editMember(selectedMember)" class="btn btn-primary">{{'edit'|translate}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'personal info'|translate}}</h3>
+                </div>
+                <!-- /.box-header -->                
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>{{'first name'|translate}}</label>
+                        <p>{{selectedMember.first_name}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'last name'|translate}}</label>
+                        <p>{{selectedMember.last_name}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'gender'|translate}}</label>
+                        <p>{{selectedMember.gender}}</p>            
+                    </div>
+                    <div class="form-group">
+                        <label>{{'dob'|translate}}</label>
+                        <p>{{selectedMember.birth_date}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'address_1'|translate}}</label>
+                        <p>{{selectedMember.address}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'address_2'|translate}}</label>
+                        <p>{{selectedMember.address_cont}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'zip'|translate}}*</label>
+                        <p>{{selectedMember.zip}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'city'|translate}}</label>
+                        <p>{{selectedMember.city}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'country'|translate}}*</label>
+                        <p>{{selectedMember.country}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'phone'|translate}}</label>
+                        <p>{{selectedMember.phone}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'mobile'|translate}}*</label>
+                        <p>{{selectedMember.mobile}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'job'|translate}}</label>
+                        <p>{{selectedMember.job}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'marital'|translate}}</label>
+                        <p>{{selectedMember.marital}}</p>
+                    </div>
+                </div>
+                <!-- /.box-body -->                 
+            </div>
+            <!-- /.box -->               
+        </div>
+        <!--/.col (left) -->
+
+        <!-- right column -->
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'account info'|translate}}</h3>
+                </div>
+                <!-- /.box-header -->                
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>{{'username'|translate}}</label>
+                        <p>{{selectedMember.first_name}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'email'|translate}}*</label>
+                        <p>{{selectedMember.email}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'doj'|translate}}</label>
+                        <p>{{selectedMember.join_date}}</p>                       
+                    </div>
+                    <div class="form-group">
+                        <label>{{'bio'|translate}}</label>
+                        <p>{{selectedMember.biography}}</p>
+                    </div> 
+                    <div class="form-group">
+                        <label>{{'profile'|translate}}</label>
+                        <p>Profile Photo Here</p>
+                    </div> 
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->                
+        </div>
+        <!--/.col (left) -->
+    </div>
+    <!-- /.row -->              
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <button type="submit" ng-click="editMember(selectedMember)" class="btn btn-primary">{{'edit'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

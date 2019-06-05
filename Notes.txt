@@ -1,0 +1,14 @@
+http://catalin.me/role-based-authentication-with-angular-express-jwt-mysql-part-1/
+https://yarnpkg.com/lang/en/docs/migrating-from-npm/
+
+Install grunt and dependencies
+Remove un needed files in 'tmp_apis' and 'lib' folders
+    temp_apis: users,
+    lib: model,
+	
+Implement "Remember me" and "Terms Check"
+[DONE] Implement LTR mirroring
+[DONE] Add 'lang' change in account screens
+Edit phone field regex in create members
+Edit name field regex in register
+Fix Calendar fields

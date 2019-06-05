@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<section class="content-header">
+    <h1>
+        {{'members'| translate}}
+        <small>{{'add member'| translate}}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> {{'members'| translate}}</a></li>
+        <li class="active">{{'here'| translate}}</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">  
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <button type="submit" ng-click="saveMember()" class="btn btn-primary">{{'save'|translate}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-dismissible" ng-class="{'alert-success': saveSuccess, 'alert-danger': saveError}" ng-if="saveError || saveSuccess" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{saveErrorMessage| translate}}
+    </div>
+    <!-- form start --> 
+    <form role="form">
+        <input type="hidden" name="source" value="create" ng-model='source'>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">{{'personal info'|translate}}</h3>
+                    </div>
+                    <!-- /.box-header -->                
+                    <div class="box-body">
+                        <div class="form-group" ng-class="{'has-error': (!fname && saveError)}">
+                            <label for="fnameInput">{{'first name'|translate}}*</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.first_name}}" id="fnameInput" ng-model="fname" required autofocus>
+                            <span class="help-block" ng-if="(!fname && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!lname && saveError)}">
+                            <label for="lnameInput">{{'last name'|translate}}*</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.last_name}}" id="lnameInput" ng-model="lname" required>
+                            <span class="help-block" ng-if="(!lname && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label>{{'gender'|translate}}</label>
+                            <div class="radio">
+                                <label>
+                                    <input check-button type="radio" name="optionsRadios" id="maleRadio" ng-model="male" value="male">
+                                    {{'male'|translate}}
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input check-button type="radio" name="optionsRadios" id="femaleRadio" ng-model="female" value="female">
+                                    {{'female'|translate}}
+                                </label>
+                            </div>                            
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!dob && saveError)}">
+                            <label>{{'dob'|translate}}*</label>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control flip bull-right" ng-value="{{selectedMember.birth_date}}" dpicker id="dobpicker" ng-model="dob" required>
+                            </div>    
+                            <span class="help-block" ng-if="(!dob && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!address && saveError)}">
+                            <label for="addressInput">{{'address_1'|translate}}*</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.address}}" id="addressInput" ng-model="address" required>
+                            <span class="help-block" ng-if="(!address && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address2Input">{{'address_2'|translate}}</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.address_cont}}" id="address2Input" ng-model="adress2">
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!zip && saveError)}">
+                            <label for="zipInput">{{'zip'|translate}}*</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.zip}}" id="zipInput" ng-model="zip" data-inputmask-regex="^[0-9]{5}(?:-[0-9]{4})?$" dmask required>
+                            <span class="help-block" ng-if="(!zip && mc.saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!city && saveError)}">
+                            <label for="cityInput">{{'city'|translate}}*</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.city}}" id="cityInput" ng-model="city" required>
+                            <span class="help-block" ng-if="(!city && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!country && saveError)}">
+                            <label for="countryInput">{{'country'|translate}}*</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.country}}" id="countryInput" ng-model="country" required>
+                            <span class="help-block" ng-if="(!country && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneInput">{{'phone'|translate}}</label>
+                            <input type="number" class="form-control" ng-value="{{selectedMember.phone}}" id="phoneInput" ng-model="phone">
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!mobile && saveError)}">
+                            <label for="mobileInput">{{'mobile'|translate}}*</label>
+                            <input type="number" class="form-control" ng-value="{{selectedMember.mobile}}" id="mobileInput" ng-model="mobile" required>
+                            <span class="help-block" ng-if="(!mobile && mc.saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobInput">{{'job'|translate}}</label>
+                            <input type="text" class="form-control" ng-value="{{selectedMember.job}}" id="jobInput" ng-model="job">
+                        </div>
+                        <div class="form-group">
+                            <label>{{'marital'|translate}}</label>
+                            <select class="form-control select2" style="width: 100%;" ng-model="marital">
+                                <option></option>
+                                <option>{{'married'|translate}}</option>
+                                <option>{{'single'|translate}}</option>
+                                <option>{{'divorced'|translate}}</option>
+                                <option>{{'widow'|translate}}</option>
+                                <option>{{'other'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->                 
+                </div>
+                <!-- /.box -->               
+            </div>
+            <!--/.col (left) -->
+
+            <!-- right column -->
+            <div class="col-md-6">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">{{'account info'|translate}}</h3>
+                    </div>
+                    <!-- /.box-header -->                
+                    <div class="box-body">
+                        <div class="form-group" ng-class="{'has-error': (!username && saveError)}">
+                            <label for="usernameInput">{{'username'|translate}}*</label>
+                            <input type="text" class="form-control" id="usernameInput" ng-model="username" required>
+                            <span class="help-block" ng-if="(!username && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': (!email && saveError)}">
+                            <label for="emailInput">{{'email'|translate}}*</label>
+                            <input type="email" class="form-control" ng-value="{{selectedMember.email}}" id="emailInput" ng-model="email" required>
+                            <span class="help-block" ng-if="(!email && saveError)">{{'required'| translate}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label>{{'doj'|translate}}</label>
+
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control flip bull-right" dpicker ng-value="{{selectedMember.join_date}}" id="dojpicker" ng-model="doj">
+                            </div>                           
+                        </div>
+                        <div class="form-group">
+                            <label>{{'bio'|translate}}</label>
+                            <textarea class="form-control" rows="3" ng-value="{{selectedMember.biography}}" ng-model="bio"></textarea>
+                        </div> 
+                        <div class="form-group">
+                            <div ng-include="uploadTemplateUrl"></div>
+                        </div> 
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->                
+            </div>
+            <!--/.col (left) -->
+        </div>
+        <!-- /.row -->              
+    </form>
+    <!-- form end -->  
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <button type="submit" ng-click="saveMember()" class="btn btn-primary">{{'save'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

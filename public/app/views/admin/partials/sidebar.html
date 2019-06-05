@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="flip pull-left image">
+            <img src="/images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="flip pull-left info">
+            <p>Alexander Pierce</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> {{'online' | translate}}</a>
+        </div>
+    </div>
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="{{'search' | translate}}">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu" data-widget="tree">
+        <!--<li class="header">MAIN NAVIGATION</li>-->
+        <li class="active">
+            <a data-ui-sref="admin.dashboard">
+                <i class="fa fa-dashboard" aria-hidden="true"></i> <span>{{'dash header' | translate}}</span>                
+            </a>            
+        </li>
+
+        <!--Settings Section-->
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <span>{{'settings'|translate}}</span>
+                <span class="flip pull-right-container">
+                    <span class="label label-primary pull-right flip">4</span>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a data-ui-sref="admin.settings.appearance"><i class="fa fa-picture-o" aria-hidden="true"></i> {{'appearance'|translate}}</a></li>               
+            </ul>
+        </li>
+
+        <!--Members Section-->
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <span>{{'members'|translate}}</span>
+                <span class="flip pull-right-container">
+                    <span class="label label-primary pull-right flip">4</span>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a data-ui-sref="admin.members.list"><i class="fa fa-bars" aria-hidden="true"></i> {{'list members'|translate}}</a></li>
+                <li><a data-ui-sref="admin.members.create"><i class="fa fa-plus" aria-hidden="true"></i> {{'add member'|translate}}</a></li>                              
+            </ul>
+        </li>
+
+        <!--Providers Section-->
+        <!--        <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-suitcase" aria-hidden="true"></i>
+                        <span>{{'providers'|translate}}</span>
+                        <span class="flip pull-right-container">
+                            <span class="label label-primary pull-right flip">4</span>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-eye" aria-hidden="true"></i> {{'view providers'|translate}}</a></li>
+                        <li><a href="pages/layout/boxed.html"><i class="fa fa-plus" aria-hidden="true"></i> {{'add provider'|translate}}</a></li>                              
+                    </ul>
+                </li>-->
+
+        <!--Clients Section-->
+        <!--        <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>{{'clients'|translate}}</span>
+                        <span class="flip pull-right-container">
+                            <span class="label label-primary pull-right flip">4</span>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-eye" aria-hidden="true"></i> {{'view clients'|translate}}</a></li>
+                        <li><a href="pages/layout/boxed.html"><i class="fa fa-plus" aria-hidden="true"></i> {{'add client'|translate}}</a></li>                              
+                    </ul>
+                </li>-->
+
+        <!--Services Section-->
+        <!--        <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                        <span>{{'services'|translate}}</span>
+                        <span class="flip pull-right-container">
+                            <span class="label label-primary pull-right flip">4</span>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-eye" aria-hidden="true"></i> {{'view services'|translate}}</a></li>
+                        <li><a href="pages/layout/boxed.html"><i class="fa fa-plus" aria-hidden="true"></i> {{'add service'|translate}}</a></li>                              
+                    </ul>
+                </li>-->
+
+        <!--Payments Section-->
+        <!--        <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <span>{{'payments'|translate}}</span>
+                        <span class="flip pull-right-container">
+                            <span class="label label-primary pull-right flip">4</span>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-eye" aria-hidden="true"></i> {{'view payments'|translate}}</a></li>
+                        <li><a href="pages/layout/boxed.html"><i class="fa fa-plus" aria-hidden="true"></i> {{'add payment'|translate}}</a></li>                              
+                    </ul>
+                </li>-->
+
+        <!--Documentation Section-->
+        <li><a data-ui-sref="admin.docs"><i class="fa fa-book"></i> <span>{{'doc header' | translate}}</span></a></li>        
+    </ul>
+</section>
+<!-- /.sidebar -->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="MainAppController">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Kodinger">
+        <title>{{'main title'| translate}} | {{'404'| translate}}</title>
+        <link href='http://fonts.googleapis.com/css?family=Istok+Web|Chivo|Lekton' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" media="all" href="/scripts/impromptu/css.css">
+        <link rel="stylesheet" media="all" href="/styles/nf_style.css">
+        <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
+        <script type="text/javascript" src="/scripts/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/scripts/impromptu/jquery-impromptu.js"></script>
+        <script type="text/javascript" src="/scripts/jquery-global.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+
+            <div class="mainWrapper">
+
+                <div id="logo"><a href="/admin" title="404 Page not found">XadoAdmin</a></div>
+
+                <div class="mainHolder">
+                    <div class="message">{{'not found'| translate}}</div>
+                    <!-- end .message -->
+                    <div class="errorNumber">404</div> 
+                    <!-- end .errorNumber -->
+                    
+                    <div class="trafficLight">404 Error</div>
+
+                </div>
+                <!-- end .mainHolder -->
+
+                <footer>
+                    <p class="copy"><strong>{{'copyright'| translate}} &copy; 2018  <a href="https://www.amazonstores.co">{{'organization'| translate}} </a></strong>  {{'rights reserved'| translate}}.</p>
+                </footer>
+                <!-- end footer -->
+            </div>
+            <!-- end .mainWrapper -->
+
+        </div>
+        <!-- end .wrapper -->
+
+        <script src="/scripts/popper.js/dist/umd/popper.min.js"></script>
+        <script src="/scripts/account/bootstrap/js/bootstrap.min.js"></script>
+        
+        <!--Xado Scripts Imports-->
+        <script src="/scripts/angular/angular.min.js" type="text/javascript"></script>
+        <script src="/scripts/angular/angular-route.min.js" type="text/javascript"></script>
+        <script src="/scripts/angular/angular-sanitize.min.js" type="text/javascript"></script>
+        <script src="/scripts/angular/angular-translate.min.js" type="text/javascript"></script>
+        <script src="/scripts/angular/angular-translate-loader-static-files.min.js" type="text/javascript"></script>
+
+        <script src="/controllers/MainAppController.js"></script>
+
+    </body>
+    
+</html>

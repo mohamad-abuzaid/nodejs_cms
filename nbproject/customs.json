@@ -1,0 +1,11 @@
+{
+    "elements": {},
+    "attributes": {
+        "check-button": {
+            "context": "input"
+        },
+        "dtable": {
+            "context": "table"
+        }
+    }
+}

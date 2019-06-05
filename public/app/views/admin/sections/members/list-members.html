@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<section class="content-header">
+    <h1>
+        {{'members'| translate}}
+        <small>{{'mem description'| translate}}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> {{'members'| translate}}</a></li>
+        <li class="active">{{'here'| translate}}</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- /.row -->
+    <div class="alert alert-dismissible" ng-class="{'alert-success': saveSuccess, 'alert-danger': saveError}" ng-if="saveError || saveSuccess" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{saveErrorMessage| translate}}
+    </div>
+
+    <!--/.records table-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-body">
+                <table id="membersTable" datatable="" dt-options="dtOptions" dt-instance="dtInstance" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" ng-model="selectAll" ng-click="toggleAll(selectAll, selected)">
+                                {{'select'|translate}}
+                            </th>
+                            <th>{{'first name'|translate}}</th>
+                            <th>{{'last name'|translate}}</th>
+                            <th>{{'email'|translate}}</th>
+                            <th>{{'city'|translate}}</th>
+                            <th>{{'country'|translate}}</th>
+                            <th>{{'actions'|translate}}</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                <input type="checkbox" ng-model="selectAll" ng-click="toggleAll(selectAll, selected)">
+                                {{'select'|translate}}
+                            </th>
+                            <th>{{'first name'|translate}}</th>
+                            <th>{{'last name'|translate}}</th>
+                            <th>{{'email'|translate}}</th>
+                            <th>{{'city'|translate}}</th>
+                            <th>{{'country'|translate}}</th>
+                            <th>{{'actions'|translate}}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--/. End records table-->
+
+</section>
+<!-- /.content -->

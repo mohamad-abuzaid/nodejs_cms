@@ -1,0 +1,114 @@
+<div ng-controller="DoctorsController">
+
+    <div class="tab-content">
+        <div class="box-body table-responsive no-padding">
+            <button class="btn btn-info" data-toggle="modal" data-target="#adddoctor">اضافة طبيب</button>
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>الطبيب</th>
+                        <th>البريد الالكتروني</th>
+                        <th>رقم التليفون</th>
+                        <th class="col-xs-2 col-sm-1 col-md-1">التحكم</th>
+                    </tr>
+                    <tr ng-repeat="Doctor in DoctorsData">
+                        <td>{{Doctor.doctor_name}}</td>
+                        <td>{{Doctor.doctor_email}}</td>
+                        <td>{{Doctor.doctor_mobile}}</td>
+                        <td class="col-xs-2 col-sm-1 col-md-1">
+                            <span ng-click="RemoveDoctor(Doctor.doctor_id)" class="btn btn-sm btn-danger fa fa-close" data-toggle="tooltip" data-placement="top" title="حذف"></span>
+                            <span ng-click="EditDoctor(Doctor.doctor_id)" class="btn btn-sm btn-info fa fa-edit" data-toggle="modal" data-target="#adddoctor" title="تعديل"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <form ng-submit="AddDoctor()">
+
+        <div class="modal fade" id="adddoctor" tabindex="-1" role="dialog" aria-labelledby="adddoctor">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">بيانات الطبيب</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label class="pull-right" >الاسم</label>
+                            <br>
+                            <input name="doctor_name" ng-model="EditData.doctor_name" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >البريد الالكتروني</label>
+                            <br>
+                            <input name="doctor_email" ng-model="EditData.doctor_email" value="" type="email" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >كلمة المرور</label>
+                            <br>
+                            <input name="doctor_password" ng-model="EditData.doctor_password" value="" type="password" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الجوال</label>
+                            <br>
+                            <input name="doctor_mobile" ng-model="EditData.doctor_mobile" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >السيرة الذاتية</label>
+                            <br>
+                            <input name="doctor_cv" ng-model="EditData.doctor_cv" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >التخصص</label>
+                            <br>
+                            <input name="doctor_field" ng-model="EditData.doctor_field" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+                        <div class="form-group">
+                            <label class="pull-right" >المصاريف</label>
+                            <br>
+                            <input name="doctor_fees" ng-model="EditData.doctor_fees" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >مدة الجلسة</label>
+                            <br>
+                            <input name="doctor_duration" ng-model="EditData.doctor_duration" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >البلد</label>
+                            <br>
+                            <input name="doctor_country" ng-model="EditData.doctor_country" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >وافق على الشروط</label>
+                            <br>
+                            <input type="checkbox" class="checkbox" ng-model="EditData.doctor_accept_terms" name="doctor_accept_terms">
+                        </div>
+
+
+                        <input name="doctor_id" ng-model="EditData.doctor_id" type="hidden">
+                        <input name="doctor_user_id" ng-model="EditData.doctor_user_id" type="hidden">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">اغلاق</button>
+                        <button type="submit" class="btn btn-primary">حفظ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

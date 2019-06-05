@@ -1,0 +1,138 @@
+<form class="form1" ng-controller="SettingsController" ng-submit="submit()">
+
+    <div class="nav-tabs-data">
+
+
+        <div class="box box-primary">
+            <h3 class="text-center"> البريد والارسال</h3>
+            <div class="form-group">
+                <label >بريد الموقع</label>
+                <br>
+                <input name="site_mail" id="site_mail" type="email" ng-model="settings.site_mail" required="" class="form-control text-left">
+            </div>
+
+            <div class="form-group">
+                <label >سيرفر الـ SMTP</label>
+                <br>
+                <input name="SmtpSettings[smtphost]" id="smtphost" type="text" required="" ng-model="settings.SmtpSettings.smtphost" class="form-control text-left" >
+            </div>
+
+
+            <div class="form-group form-inline">
+                <label >منفذ SMTP</label>
+                <br>
+                <input name="SmtpSettings[smtpport]" id="smtpport" type="text" required="" ng-model="settings.SmtpSettings.smtpport" size="10" class="form-control text-left" >
+            </div>
+
+            <div class="form-group form-inline">
+                <label >SMTPSecure</label>
+                <br>
+                <input name="SmtpSettings[SMTPSecure]" id="SMTPSecure" type="text" required="" ng-model="settings.SmtpSettings.SMTPSecure" size="10" class="form-control text-left" >
+            </div>
+
+            <div class="form-group">
+                <label >اسم الدخول</label>
+                <br>
+                <input name="SmtpUserName" id="SmtpUserName" type="text" required="" ng-model="settings.SmtpUserName" class="form-control text-left" >
+            </div>
+
+            <div class="form-group">
+                <label >كلمة المرور</label>
+                <br>
+                <input name="SmtpPassword" id="SmtpPassword" type="password" required="" ng-model="settings.SmtpPassword" class="form-control text-left" >
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <div class="box box-primary">
+            <h3 class="text-center">Paypal Data</h3>
+            <div class="form-group form-inline">
+                <label >حالة بوابة الدفع</label>
+                <br>
+                <select class="form-control input-sm pull-left" ng-model="settings.payment_config.payment_status" name="payment_config[payment_status]" id="payment_status">
+                    <option value="live">live</option>
+                    <option value="sandbox" >sandbox</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label >paypal email</label>
+                <br>
+                <input name="payment_config[paypal_email]" id="paypal_email" required="" type="email" ng-model="settings.payment_config.paypal_email" class="form-control text-left" >
+            </div>
+
+            <div class="form-group">
+                <label >client id</label>
+                <br>
+                <input name="payment_config[paypal_client_id]" id="paypal_client_id" required type="text" ng-model="settings.payment_config.paypal_client_id" class="form-control text-left" >
+            </div>
+
+            <div class="form-group">
+                <label >client secret</label>
+                <br>
+                <input name="payment_config[paypal_client_secret]" id="paypal_client_secret" required ng-model="settings.payment_config.paypal_client_secret" type="text" class="form-control text-left" >
+            </div>
+
+
+            <div class="form-group form-inline">
+                <label >العملة الافتراضية</label>
+                <br>
+                <select class="form-control input-sm pull-left" ng-model="settings.payment_config.payment_currency" name="payment_config[payment_currency]" id="payment_currency">
+                    <option value="CAD" >CAD - &ensp; Canadian Dollar </option>
+                    <option value="EUR" >EUR - &ensp; Euro </option>
+                    <option value="HKD" >HKD - &ensp; Hong Kong Dollar </option>
+                    <option value="MXN" >MXN - &ensp; Mexican Peso </option>
+                    <option value="NOK" >NOK - &ensp; Norwegian Krone </option>
+                    <option value="NZD" >NZD - &ensp; New Zealand Dollar </option>
+                    <option value="PHP" >PHP - &ensp; Philippine Peso </option>
+                    <option value="PLN" >PLN - &ensp; Polish Zloty </option>
+                    <option value="GBP" >GBP - &ensp; Pound Sterling </option>
+                    <option value="RUB" >RUB - &ensp; Russian Ruble </option>
+                    <option value="SGD" >SGD - &ensp; Singapore Dollar </option>
+                    <option value="SEK" >SEK - &ensp; Swedish Krona </option>
+                    <option value="CHF" >CHF - &ensp; Swiss Franc </option>
+                    <option value="TWD" >TWD - &ensp; Taiwan New Dollar </option>
+                    <option value="THB" >THB - &ensp; Thai Baht</option>
+                    <option value="USD" >USD - &ensp; U.S. Dollar </option>
+                </select>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <div class="box box-primary">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding border">
+                <h3 class="text-center">Contact</h3>
+                <div class="form-group">
+                    <label >Email</label>
+                    <br>
+                    <input name="contact_config[address][email]" id="email" required type="email" ng-model="settings.contact_config.address.email" class="form-control text-left" >
+                </div>
+
+
+                <div class="form-group">
+                    <label >Fax</label>
+                    <br>
+                    <input name="contact_config[address][phone_fax]" id="phone_fax" type="text" ng-model="settings.contact_config.address.phone_fax" class="form-control text-left" >
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nomargin padding-8-0 text-center">
+        <button type="submit" class="btn btn-sm btn-success">save</button>
+        <button type="reset" class="btn btn-sm btn-primary">reset</button>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<section class="h-100">
+    <div class="alert alert-success alert-dismissible" ng-if="rgc.signupError" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{ rgc.signupErrorMessage| translate}}
+    </div>
+
+    <div class="container h-100">
+        <div class="row justify-content-md-center h-100">
+            <div class="card-wrapper">
+                <div class="brand">
+                    <img src="/images/account/logo.jpg" alt="xado admin logo">
+                </div>
+                <div class="card fat">
+                    <div class="card-body">
+                        <h4 class="card-title">{{'register new'| translate}}</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">{{'username'| translate}}</label>
+                                <input id="name" type="text" ng-model="rgc.name" class="form-control" name="name" required autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">{{'email'| translate}}</label>
+                                <input id="email" type="email" ng-model="rgc.email" class="form-control" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">{{'password'| translate}}</label>
+                                <input id="password" type="password" ng-model="rgc.password" class="form-control" name="password" required data-eye>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="aggree" value="1"> {{'agree terms'| translate}} <a href="/account/terms">{{'terms cond'| translate}}</a>
+                                </label>
+                            </div>
+
+                            <div class="form-group no-margin">
+                                <button type="submit" ng-click="rgc.signup()" class="btn btn-primary btn-block">
+                                    {{'register'| translate}}
+                                </button>
+                            </div>
+                            <div class="margin-top20 text-center">
+                                {{'have acc'| translate}} <a data-ui-sref="login">{{'login'| translate}}</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,218 @@
+<div ng-controller="PatientsController">
+
+    <div class="tab-content">
+        <div class="box-body table-responsive no-padding">
+            <button class="btn btn-info" data-toggle="modal" data-target="#addpatient">اضافة مريض</button>
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>الاسم</th>
+                        <th>بيانات الاتصال</th>
+                        <th>العنوان</th>
+                        <th>تاريخ الميلاد</th>
+                        <th class="col-xs-2 col-sm-1 col-md-1">التحكم</th>
+                    </tr>
+                    <tr ng-repeat="Patient in PatientsData">
+                        <td>{{Patient.patient_name}}</td>
+                        <td>
+                            {{Patient.patient_email}}
+                            <br>
+                            {{Patient.patient_mobile}}
+                        </td>
+                        <td>{{Patient.patient_address}}</td>
+                        <td>
+                            {{Patient.patient_birthdate}}
+                            <br>
+                            {{Patient.patient_age}}
+                        </td>
+                        <td class="col-xs-2 col-sm-1 col-md-1">
+                            <span ng-click="RemovePatient(Patient.patient_id)" class="btn btn-sm btn-danger fa fa-close" data-toggle="tooltip" data-placement="top" title="حذف"></span>
+                            <span ng-click="EditPatient(Patient.patient_id)" class="btn btn-sm btn-info fa fa-edit" data-toggle="modal" data-target="#addpatient" title="تعديل"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <form ng-submit="AddPatient()">
+
+        <div class="modal fade" id="addpatient" tabindex="-1" role="dialog" aria-labelledby="addpatient">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">بيانات الطبيب</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label class="pull-right" >الاسم</label>
+                            <br>
+                            <input name="patient_name" ng-model="EditData.patient_name" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >البريد الالكتروني</label>
+                            <br>
+                            <input name="patient_email" ng-model="EditData.patient_email" value="" type="email" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >كلمة المرور</label>
+                            <br>
+                            <input name="patient_password" ng-model="EditData.patient_password" value="" type="password" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الجوال</label>
+                            <br>
+                            <input name="patient_mobile" ng-model="EditData.patient_mobile" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >البلد</label>
+                            <br>
+                            <input name="patient_country" ng-model="EditData.patient_country" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >وافق على الشروط</label>
+                            <br>
+                            <input name="patient_accept_terms" ng-model="EditData.patient_accept_terms" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >تاريخ الميلاد</label>
+                            <br>
+                            <input name="patient_birthdate" ng-model="EditData.patient_birthdate" value="" type="date" min="1930-01-01" max="2050-12-31" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >السن</label>
+                            <br>
+                            <input name="patient_age" ng-model="EditData.patient_age" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >بريد الوالد</label>
+                            <br>
+                            <input name="patient_parent_email" ng-model="EditData.patient_parent_email" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >موافقة الوالد</label>
+                            <br>
+                            <input name="patient_parent_accept" ng-model="EditData.patient_parent_accept" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الجنس</label>
+                            <br>
+                            <input name="patient_gender" ng-model="EditData.patient_gender" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >العنوان</label>
+                            <br>
+                            <input name="patient_address" ng-model="EditData.patient_address" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الحالة الاجتماعية</label>
+                            <br>
+                            <input name="patient_social_status" ng-model="EditData.patient_social_status" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >عدد الاولاد</label>
+                            <br>
+                            <input name="patient_kids_number" ng-model="EditData.patient_kids_number" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >مكان العمل</label>
+                            <br>
+                            <input name="patient_work_place" ng-model="EditData.patient_work_place" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >سبق العلاج فى عيادة نفسية</label>
+                            <br>
+                            <select name="patient_psychic_before" ng-model="EditData.patient_psychic_before" class ="form-control">
+                                <option value="1">نعم</option>
+                                <option value="0">لا</option>
+                            </select>
+                            <input name="patient_psychic_before" ng-model="EditData.patient_psychic_before" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >هل تتناول أدوية نفسية</label>
+                            <br>
+                            <input name="patient_psychic_medicine" ng-model="EditData.patient_psychic_medicine" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الأدوية</label>
+                            <br>
+                            <input name="patient_psychic_medicines" ng-model="EditData.patient_psychic_medicines" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >سبق التنويم المغناطيسى</label>
+                            <br>
+                            <input name="patient_hypno" ng-model="EditData.patient_hypno" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >مدخن</label>
+                            <br>
+                            <input name="patient_smoker" ng-model="EditData.patient_smoker" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >أمراض أخرى</label>
+                            <br>
+                            <input name="patient_other_deceases" ng-model="EditData.patient_other_deceases" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الأمراض</label>
+                            <br>
+                            <input name="patient_other_medicines" ng-model="EditData.patient_other_medicines" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >الأدوية</label>
+                            <br>
+                            <input name="patient_other_medicine" ng-model="EditData.patient_other_medicine" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >حامل</label>
+                            <br>
+                            <input name="patient_pregnant" ng-model="EditData.patient_pregnant" value="" type="text" required="" class="form-control text-left" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pull-right" >ميعاد أخر دورة</label>
+                            <br>
+                            <input name="patient_last_perio" ng-model="EditData.patient_last_perio" value="" type="datetime-local" required="" class="form-control text-left" >
+                        </div>
+
+                        <input name="patient_id" ng-model="EditData.patient_id" type="hidden">
+                        <input name="patient_user_id" ng-model="EditData.patient_user_id" type="hidden">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">اغلاق</button>
+                        <button type="submit" class="btn btn-primary">حفظ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

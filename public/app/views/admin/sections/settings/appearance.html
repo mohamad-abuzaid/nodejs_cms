@@ -1,0 +1,108 @@
+<section class="content-header">
+    <h1>
+        {{'appear header'| translate}}
+        <small>{{'appear description'| translate}}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> {{'appear header'| translate}}</a></li>
+        <li class="active">{{'here'| translate}}</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'change lang'|translate}}</h3>
+
+                    <div class="box-tools flip pull-right flip">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>                        
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <button type="button" ng-click="initLang('en')" class="btn btn-default btn-block">
+                        {{'english lang'|translate}}
+                    </button>
+                    <button type="button" ng-click="initLang('ar')" class="btn btn-default btn-block">
+                        {{'arabic lang'|translate}}
+                    </button>                                 
+                </div>
+                <!-- ./box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'change skin'|translate}}</h3>
+                    <div class="box-tools flip pull-right flip">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>                                                
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">                
+                    <button type="button" ng-click="changeSkin('skin-blue')" class="btn bg-blue btn-block">
+                        {{'skin blue'|translate}}
+                    </button>                     
+                    <button type="button" ng-click="changeSkin('skin-yellow')" class="btn bg-yellow btn-block">
+                        {{'skin yellow'|translate}}
+                    </button>   
+                    <button type="button" ng-click="changeSkin('skin-red')" class="btn bg-red btn-block">
+                        {{'skin red'|translate}}
+                    </button>
+                    <button type="button" ng-click="changeSkin('skin-purple')" class="btn bg-purple btn-block">
+                        {{'skin purple'|translate}}
+                    </button>   
+                    <button type="button" ng-click="changeSkin('skin-green')" class="btn bg-green btn-block">
+                        {{'skin green'|translate}}
+                    </button>                          
+                </div>
+                <!-- ./box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'change layout'|translate}}</h3>
+
+                    <div class="box-tools flip pull-right flip">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>                        
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">                  
+                    <button type="button" ng-click="changeLayout('fixed')" class="btn btn-default btn-block">
+                        {{'layout fixed'|translate}}
+                    </button>
+                    <button type="button" ng-click="changeLayout('layout-boxed')" class="btn btn-default btn-block">
+                        {{'layout boxed'|translate}}
+                    </button>   
+                    <button type="button" ng-click="changeLayout('layout-top-nav')" class="btn btn-default btn-block">
+                        {{'layout top nav'|translate}}
+                    </button>   
+                    <button type="button" ng-click="changeLayout('sidebar-collapse')" class="btn btn-default btn-block">
+                        {{'layout side coll'|translate}}
+                    </button>   
+                    <button type="button" ng-click="changeLayout('sidebar-mini')" class="btn btn-default btn-block">
+                        {{'layout side mini'|translate}}
+                    </button>                                                      
+                </div>
+                <!-- ./box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

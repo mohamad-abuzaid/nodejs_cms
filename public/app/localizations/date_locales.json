@@ -1,0 +1,29 @@
+{
+    "en": {
+        "dayNames": [
+            "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saurday"
+        ],
+        "monthNames": [
+            "Jan", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+            "January", "Febuary", "March", "April", "May", "June", "July", "August", "Septembre", "Octobre", "November", "December"
+        ],
+        "masks": {
+            "default": "dddd, d 'de' mmmm yyyy"
+        }
+    },
+    
+    "ar": {
+        "dayNames": [
+            "الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت",
+            "الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"
+        ],
+        "monthNames": [
+            "يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر",
+            "يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+        ],
+        "masks": {
+            "default": "dddd, d 'de' mmmm yyyy"
+        }
+    }
+}
