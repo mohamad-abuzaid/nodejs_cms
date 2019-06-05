@@ -1,3 +1,4 @@
 /node_modules/
 /nbproject/private/
 /app/uploads/
+package-lock.json
