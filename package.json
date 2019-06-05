@@ -60,7 +60,7 @@
     "jvectormap": "^2.0.4",
     "md5": "2.2.1",
     "moment": "^2.18.1",
-    "morgan": "1.9.0",
+    "morgan": "^1.9.1",
     "morris.js": "^0.5.0",
     "multer": "^1.3.0",
     "multi-views": "0.1.1",
@@ -77,9 +77,12 @@
     "popper.js": "1.12.7",
     "request": "2.83.0",
     "select2": "^4.0.3",
-    "sequelize": "^4.17.1",
+    "sequelize": "^5.3.0",
     "serve-favicon": "2.4.5",
-    "serve-index": "1.9.1"
+    "serve-index": "1.9.1",
+    "@hapi/cryptiles": ">=4.1.2",
+    "@hapi/hoek": ">=4.2.1",
+    "@hapi/boom": ">=7.4.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
