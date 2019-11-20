@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "JSON": "^1.0.0",
-    "angular": "1.6.4",
+    "angular": "1.7.9",
     "angular-cookies": "1.6.6",
     "angular-file-upload": "^2.5.0",
     "angular-route": "1.6.4",
