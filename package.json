@@ -28,7 +28,7 @@
     "angular-translate": "2.16.0",
     "angular-translate-loader-static-files": "2.16.0",
     "@uirouter/angularjs": "^1.0.22",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "bootstrap-colorpicker": "^2.5.1",
