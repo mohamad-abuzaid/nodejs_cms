@@ -37,7 +37,7 @@
     "bootstrap-rtl": "3.3.4",
     "bootstrap-slider": "*",
     "bootstrap-timepicker": "^0.5.2",
-    "chart.js": "1.0.*",
+    "chart.js": "2.9.*",
     "ckeditor": "^4.7.0",
     "cookie-parser": "1.4.3",
     "datatables.net": "^1.10.19",
